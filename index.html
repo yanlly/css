@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>CSS</title>
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+  <section class="info-box">
+    <ul class="nav">
+      <li><a href="#" class="active">animation</a></li>
+      <li><a href="#">table</a></li>
+      <li><a href="#">transition</a></li>
+    </ul>
+    <div class="panels">
+
+      <!-- animation -->
+      <article class="active-panel">
+          <div class="ani">
+              <ul>
+                  <li><img src="images/01.jpg" alt=""></li>
+                  <li><img src="images/02.jpg" alt=""></li>
+                  <li><img src="images/03.jpg" alt=""></li>
+                  <li><img src="images/04.jpg" alt=""></li>
+              </ul>
+          </div>
+      </article>
+
+      <!-- table -->
+      <article class="kong">
+        <table class="table">
+          <caption>广东2013年固定资产投资情况表<span>单位：亿元</span></caption>
+          <thead>
+              <tr class="grp">
+                  <th rowspan="2"></th>
+                  <th scope="colgroup" colspan="2">第一产业</th>
+                  <th scope="colgroup" colspan="2">第二产业</th>
+                  <th scope="colgroup" colspan="2">第三产业</th>
+              </tr>
+              <tr class="mem">
+                  <th scope="col">完成投资</th>
+                  <th scope="col">比去年增长%</th>
+                  <th scope="col">完成投资</th>
+                  <th scope="col">比去年增长%</th>
+                  <th scope="col">完成投资</th>
+                  <th scope="col">比去年增长%</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <th scope="row">珠三角</th>
+                  <td>92.74</td>
+                  <td>10.4</td>
+                  <td>4431.69</td>
+                  <td>6.5</td>
+                  <td>11532.46</td>
+                  <td>18.5</td>
+              </tr>
+              <tr>
+                  <th scope="row">粤东</th>
+                  <td>63.03</td>
+                  <td>34.6</td>
+                  <td>1132.53</td>
+                  <td>22.3</td>
+                  <td>1134.22</td>
+                  <td>23.5</td>
+              </tr>
+              <tr>
+                  <th scope="row">粤西</th>
+                  <td>105.9</td>
+                  <td>41.0</td>
+                  <td>967.03</td>
+                  <td>37.9</td>
+                  <td>981.84</td>
+                  <td>38.9</td>
+              </tr>
+              <tr>
+                  <th scope="row">粤北</th>
+                  <td>92.47</td>
+                  <td>36.1</td>
+                  <td>914.81</td>
+                  <td>20.2</td>
+                  <td>1409.81</td>
+                  <td>24.8</td>
+              </tr>
+          </tbody>
+          <tfoot>
+              <tr>
+                  <th>总计投资</th>
+                  <td colspan="2">354.14</td>
+                  <td colspan="2">7446.06</td>
+                  <td colspan="2">15058.33</td>
+              </tr>
+          </tfoot>
+        </table>    
+      </article>
+      
+      <!-- transition -->
+      <article class="kong">
+          <ul class="tran">
+              <li><img src="images/1.jpg"></li>
+              <li><img src="images/2.jpg"></li>
+              <li><img src="images/3.jpg"></li>
+              <li><img src="images/4.jpg"></li>
+              <li><img src="images/5.jpg"></li>
+          </ul>
+      </article>
+    </div>
+  </section>
+
+  <script>
+    var tabs = document.querySelectorAll('.info-box li a');
+    var panels = document.querySelectorAll('.info-box article');
+    for(i = 0; i < tabs.length; i++) {
+      var tab = tabs[i];
+      setTabHandler(tab, i);
+    }
+    function setTabHandler(tab, tabPos) {
+      tab.onclick = function() {
+        for(i = 0; i < tabs.length; i++) {
+          tabs[i].className = '';
+        }
+        tab.className = 'active';
+        for(i = 0; i < panels.length; i++) {
+          panels[i].className = 'kong';
+        }
+        panels[tabPos].className = 'active-panel';
+      }
+    }     
+  </script>
+</body>
+</html>
